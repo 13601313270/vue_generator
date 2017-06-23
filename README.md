@@ -2,19 +2,20 @@
 
 
 ```
+ .
  ├── build
  ├── client
- 	├── js
- 		├── project
- 	├── css
- 		├── project
+ 	└── js
+ 		└── project
+ 	└── css
+ 		└── project
  ├── config  
  ├── public
- 	├── dist
+ 	└── dist
  ├── server
- 	├── views # 模板
- 	├── routes # node路由
- 	├── middleware # 自己开发的一些中间件
+ 	└── views # 模板
+ 	└── routes # node路由
+ 	└── middleware # 自己开发的一些中间件
  ├── tests
  ├── .babelrc 
  ├── .eslintrc
@@ -22,7 +23,7 @@
  ├── .npmrc
  ├── ecosystem.json
  ├── package.json
- ├── README.md
+ └── README.md
 ```
 
 
