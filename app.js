@@ -1,3 +1,4 @@
+'use strict'
 const express = require('express')
 const renderConf = require('./config/renderConfig')
 const glob = require('glob')
