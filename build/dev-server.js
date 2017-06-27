@@ -1,6 +1,6 @@
 var devServer = function (app, express) {
   var opn = require('opn')
-  var port = require('luojilab-port')
+  var port = require('../config/renderConfig').port
   var webpack = require('webpack')
   var config = require('../config')
   var webpackConfig = require('./webpack.dev.conf')

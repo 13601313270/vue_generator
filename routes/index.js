@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const log = require('luojilab-log4js').logger
+const log = require('log4js-tracer').logger
 
 module.exports = function (app) {
   app.use('/', router)

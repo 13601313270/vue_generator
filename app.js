@@ -6,12 +6,10 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const compress = require('compression')
 const nunjucks = require('nunjucks')
-const logger = require('luojilab-log4js').use
+const logger = require('log4js-tracer').use
 const devServer = require('./build/dev-server')
 const WEBPACK_HASH_MAP = require('./config/webpack-hash-map')
 const render = require('./server/middleware/render')
-
-console.log(glob.sync('server/**/*.js'))
 
 if (process.env.SERVER_CONFIG !== 'production') {
   require('proxy-hot-reload')({
@@ -35,7 +33,7 @@ const nunjuck = nunjucks.configure(renderConf.root + '/server/views', {
   }
 })
 nunjuck.addGlobal('staticBaseUrl', renderConf.staticBaseUrl)
-logger(app)
+logger(app, '/data/logs/node/vue_generator')
 app.use(favicon(renderConf.root + '/public/favicon.ico'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -51,8 +49,8 @@ glob.sync(renderConf.root + '/server/routes/*.js').forEach(function (router) {
 if (app.locals.ENV_DEVELOPMENT) {
   devServer(app, express)
 } else {
-  app.listen(3000, function () {
-    console.log('App (production) is now running on port => 3000')
+  app.listen(renderConf.port, function () {
+    console.log('App (production) is now running on port =>' + renderConf.port)
   })
 }
 
@@ -71,3 +69,4 @@ app.use(function (err, req, res, next) {
 })
 
 module.exports = app
+

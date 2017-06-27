@@ -1,4 +1,4 @@
-const log = require('luojilab-log4js').logger
+const log = require('log4js-tracer').logger
 const render = function (req, res, next) {
   const _render = res.render
   let renderArguments = []

@@ -1,5 +1,5 @@
 const path = require('path')
-const port = require('luojilab-port')
+const port = require('../config/renderConfig').port
 
 module.exports = {
   build: {
