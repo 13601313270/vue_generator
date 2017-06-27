@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const compress = require('compression')
 const nunjucks = require('nunjucks')
-const logger = require('log4js-tracer').use
+const logger = require('log4js-tracer')
 const devServer = require('./build/dev-server')
 const WEBPACK_HASH_MAP = require('./config/webpack-hash-map')
 const render = require('./server/middleware/render')
@@ -33,7 +33,9 @@ const nunjuck = nunjucks.configure(renderConf.root + '/server/views', {
   }
 })
 nunjuck.addGlobal('staticBaseUrl', renderConf.staticBaseUrl)
-logger(app, '/data/logs/node/vue_generator')
+logger('/data/logs/node/vue_generator', {
+  express: app
+})
 app.use(favicon(renderConf.root + '/public/favicon.ico'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
