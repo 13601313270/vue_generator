@@ -1,3 +1,4 @@
+'use strict'
 const log = require('log4js-tracer').logger
 const render = function (req, res, next) {
   const _render = res.render
