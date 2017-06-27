@@ -52,7 +52,7 @@ index.js：webpack构建相关配置
 renderConfig.js：渲染时，不同环境对应的配置
 
 ## .eslintrc
-关于代码风格检测，尝试过很多工具，最终还是选择了eslint。现在编辑器基本都可以支持各种lint插件，但是代码美化很难符合要求。比如function和()之间的空格，规范很难统一。如果使用standard模式的话，推荐使用[standard-format]插件来格式化js代码。
+关于代码风格检测，尝试过很多工具，最终还是选择了eslint。现在编辑器基本都可以支持各种lint插件，但是代码美化很难符合要求。比如function和()之间的空格，规范很难统一。如果使用standard模式的话，推荐使用[standard-format](https://github.com/maxogden/standard-format/blob/master/rc/esformatter.json)插件来格式化js代码。
 
 - Sublime Text 插件: sublime-standard-format
 - Atom 插件: atom-standard-formatter
@@ -64,7 +64,7 @@ renderConfig.js：渲染时，不同环境对应的配置
 测试代码，暂时只有一个基于supertest的简单路由测试，用于跑通ci集成
 
 ## .npmrc 
-[npm初始化]相关参数，npm默认安装官方地址，可以通过这个配置来实现从淘宝镜像或者自建npm上安装。
+[npm初始化](https://docs.npmjs.com/misc/config)相关参数，npm默认安装官方地址，可以通过这个配置来实现从淘宝镜像或者自建npm上安装。
 
 官方源：registry=http://registry.npm.luojilab.com/
 淘宝源：registry= http://r.cnpmjs.org/
@@ -73,13 +73,13 @@ renderConfig.js：渲染时，不同环境对应的配置
 1. 对需要经常切换维护多个库的同学尤其方便
 2. 生产环境如果需要安装**自建npm **源里面包的时候，不用提前修改服务器上npm的配置，方便维护
 
-**推荐使用[nrm]来管理npm registry，切换账号也超级方便。**
+**推荐使用[nrm](https://github.com/Pana/nrm)来管理npm registry，切换账号也超级方便。**
 
 ## ecosystem.json
 
-利用pm2把git库的代码直接部署到目标服务上，[参考pm2 deploy配置]
+利用pm2把git库的代码直接部署到目标服务上，[参考pm2 deploy配置](http://pm2.keymetrics.io/docs/usage/deployment/)
 
 
 ## gitlab-ci.yml
 
-持续集成测试，因为我们公司在用gitlab，这是基于Gitlab-CI持续化集成的配置文件，如果是github中还有[Travis-CI]。每次merge或者push代码都会帮你自动跑一边测试，通过后会显示小绿勾(gitlab)或者build pass(github)的小图标。
+持续集成测试，因为我们公司在用gitlab，这是基于Gitlab-CI持续化集成的配置文件，如果是github中还有[Travis-CI](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)。每次merge或者push代码都会帮你自动跑一边测试，通过后会显示小绿勾(gitlab)或者build pass(github)的小图标。
