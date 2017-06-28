@@ -5,7 +5,10 @@ node_js:
   - "6"
   - "7"
 install: "npm install"
-script: "npm run test"
+script: 
+  - "npm run test"
+  - "npm run test-travis"
+  - "npm run lint"
 after_script:
   - "test -e ./coverage/lcov.info && npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
 
