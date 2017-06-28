@@ -8,7 +8,8 @@
     "publish": "pm2 deploy ecosystem.json testing",
     "test": "export SERVER_CONFIG=testing && mocha test/*.test.js",
     "lint": "eslint build/*.js client/* server/* test/* app.js",
-    "test-cov": "istanbul cover _mocha -- --reporter dot"
+    "test-cov": "istanbul cover _mocha -- --reporter dot",
+    "test-travis": "istanbul cover _mocha --report lcovonly -- --reporter spec"
   },
   "author": "tonyljl526@qq.com",
   "license": "MIT",

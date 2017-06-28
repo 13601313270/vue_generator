@@ -1,6 +1,7 @@
 # vue2.0 + webpack3.0 + express 脚手架
 
 [![Build Status](https://travis-ci.org/tonyljl526/vue_generator.svg?branch=master)](https://travis-ci.org/tonyljl526/vue_generator)
+[![Coverage Status](https://coveralls.io/repos/github/tonyljl526/vue_generator/badge.svg)](https://coveralls.io/github/tonyljl526/vue_generator)
 
 ```
  .
